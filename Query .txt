@@ -1,0 +1,25 @@
+1: To covert dob to age
+   
+	Age = DATEDIFF([PatientDOB], TODAY(),YEAR)
+	
+	
+2:convert age to age group
+ 
+	Age-Group = SWITCH(TRUE(), [Age]>=1 && [Age]<=10, "1-10", [Age]>=11 && [Age]<=20 ,"11-20" ,
+	[Age]>=21 && [Age] <=30 , "21-30", [Age]>=31 && [Age] <=40 , "31-40",  [Age]>=41 && [Age] <=50 ,
+	"41-50", [Age]>=51 && [Age] <=60 , "51-60", [Age]>=61 && [Age] <=70 , "61-70",
+	[Age]>=71 && [Age] <=80 , "71-80", [Age]>=81 && [Age] <=90 , "81-90", 
+	[Age]>=91 && [Age] <=100 , "91-100", [Age]>100 ,"100+")
+
+
+YTD and MTD
+	YTD helps track progress over the entire year so far.
+	MTD focuses on progress for the ongoing month. Both metrics 
+	are crucial for performance evaluation and 
+	goal-setting in business, helping organizations 
+	understand where they stand compared to targets or previous periods.
+
+Metric	   |  YTD (Year-to-Date)	                            |	MTD (Month-to-Date)
+Period	   |  From the start of the year to the current date	|   From the start of the month to the current date
+Time Frame |  Longer-term (yearly analysis)	                    |   Short-term (monthly analysis)
+Usage	   |  Tracking annual trends and performance	        |   Monitoring performance within the current month
