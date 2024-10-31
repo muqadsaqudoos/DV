@@ -1,0 +1,8 @@
+ActiveFacilities = 
+CALCULATE(
+    COUNTROWS(facility),
+    facility[status] = "Approved",
+    facility[issuspended] = FALSE(),
+    facility[CreatedDate] >= MIN(facility[CreatedDate]),
+    facility[CreatedDate] <= MAX(facility[CreatedDate])
+)
