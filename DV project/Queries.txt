@@ -1,0 +1,23 @@
+TAT in Days = 
+    IF(
+        ISBLANK('MasterData'[ValidatedDate]), 
+        0, 
+        DATEDIFF('MasterData'[AddedDate], 'MasterData'[ValidatedDate], DAY)
+    )
+
+
+Total TAT = 
+    SUM('MasterData'[Tat in days])
+
+
+Average TAT = 
+    AVERAGE('MasterData'[TAT in Days])
+
+GenderGroup = 
+    SWITCH(
+        TRUE,
+        MasterData[PatientGender] = "Male", "Male",
+        MasterData[PatientGender] = "Female", "Female",
+        "Others"
+    )
+
