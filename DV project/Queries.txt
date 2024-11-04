@@ -21,3 +21,8 @@ GenderGroup =
         "Others"
     )
 
+
+
+MaleCount = CALCULATE(COUNT(MasterData[PatientGender]), MasterData[GenderGroup] = "Male")
+FemaleCount = CALCULATE(COUNT(MasterData[PatientGender]), MasterData[GenderGroup] = "Female")
+OthersCount = CALCULATE(COUNT(MasterData[PatientGender]), MasterData[GenderGroup] = "Others")
